@@ -27,7 +27,7 @@ class CallCallHandler(unittest.TestCase):
 
     def test_locate_handler_for_call(self):
         self.call_handler.add_employee(self.mock_employee)
-        self.assertEqual(self.call_handler.locate_handler_for_call(0),self.mock_employee,msg='must be able to find employee if available')
+        self.assertEqual(self.call_handler.locate_handler_for_call(0), self.mock_employee,msg='must be able to find employee if available')
         return True
 
     def test_locate_handler_for_call_when_no_employees_of_low_rank_available(self):

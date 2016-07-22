@@ -41,6 +41,14 @@ class EmployeeTests(unittest.TestCase):
         self.assertRaises(StandardError,lambda: self.employee.recieve_call(self.mock_call))
         return True
 
+    def test_complete_call_when_not_free_side_effect(self):
+        self.employee.is_free = mock.Mock(return_value=True)
+        with self.assertRaises(NameError) as cm:
+            self.employee.complete_call()
+
+        #self.assertEqual(cm.exception.code, 1)
+        print 'message:', cm.exception.message
+
     def test_complete_call_when_not_free(self):
         self.employee.recieve_call(self.mock_call)
         self.assertTrue(self.employee.complete_call())

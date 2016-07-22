@@ -24,7 +24,7 @@ class CallHandler:
 
     def locate_handler_for_call(self, rank):
         '''
-        Get the first handler available who can handle the call of a specific rank
+        Get the first employee available who can handle the call of a specific rank
         '''
 
         if type(rank) is not int:
@@ -183,7 +183,7 @@ class Employee:
             self.call = None
             return True
         else:
-            raise NameError, 'Instance not currently associated with a valid call'
+            raise NameError('Instance not currently associated with a valid call')
 
     def escalate_and_reassign(self):
         '''
@@ -210,7 +210,7 @@ class Employee:
                 self.call = call
                 call.set_employee_handler(self)
         else:
-            raise NameError, 'Instance is currently associated with a valid call'
+            raise NameError('Instance is currently associated with a valid call')
 
     def is_free(self):
         if self.call is None:
